@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+// Menu Cores
+$text-color: #eee;
+$menu-bg: #333;
+$menu-hover: #444;
+$menu-border: #555;
+$color-back: rgb(243, 240, 240);
+
+// Menu Fontes
+//$fonte: "PT Sans", sans-serif;
+$fonte: "Open Sans", sans-serif !important;
+$fonte-color: rgb(101, 102, 104);
+
+body {
+  font-family: $fonte;
+  color: $fonte-color;
+  //background-color: $color-back;
+  margin: 0;
+}
+// Estilo da navegacao
+nav {
+  top: 0; // Fixar o menu no topo
+  position: fixed; // Fixar o menu no topo
+  height: 40px;
+  width: 100%;
+  background-color: $menu-bg;
+  color: $text-color;
+  font-size: 0.9rem;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: $text-color;
+  }
+
+  li:hover {
+    background-color: $menu-hover;
+  }
+
+  a#openup {
+    display: none;
+  }
+} //nav
+
+// Inicio
+#home {
+  margin: 0;
+  padding: 0;
+  background: url("../img/ai11.jpg") no-repeat center/cover;
+  background-color: #eee;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+  .inicio {
+    margin-top: 40vh;
+    text-align: center;
+    padding: 0 auto;
+    font-size: 2rem;
+
+    color: rgb(198, 242, 250);
+  }
+}
+.secao {
+  hr {
+    margin: auto;
+    border-color: #727878;
+    opacity: 0.2;
+  }
+}
+.container {
+  grid-area: container;
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #22a39f;
+  }
+  p {
+    font-size: 1.3rem;
+    color: #727878;
+    font-weight: 100;
+  }
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1rem;
+  padding: 0;
+}
+
+#about-info {
+  display: grid;
+  grid-gap: 30px;
+  overflow: auto;
+  grid-template-areas:
+    "container container container container"
+    "bio bio bio bioimage";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #aa9100 3px solid;
+    padding: 0.3rem;
+  }
+  .bio {
+    grid-area: bio;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    padding: 1rem;
+  }
+}
+#skill {
+  display: grid;
+  grid-gap: 30px;
+  overflow: auto;
+
+  background-color: $color-back;
+  grid-template-areas:
+    "container container"
+    "job1 job1"
+    "job2 job3";
+  grid-template-columns: 1fr 1fr;
+  padding: 1.2rem;
+
+  .job-1 {
+    grid-area: job1;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin: auto;
+  }
+  .job-2 {
+    grid-area: job2;
+    font-size: 1.1rem;
+
+    margin-left: 15rem;
+    .skill-container {
+      width: 80%;
+      height: 25px;
+      background-color: #ddd;
+      margin: 10px 20px 5px 20px;
+      display: inline-block;
+      position: relative;
+    }
+    .skill-container p {
+      line-height: 0rem;
+      position: absolute;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .skill-container p:nth-child(2) {
+      padding-left: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .skill-container p:nth-child(3) {
+      right: 20px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .skill-graph {
+      position: absolute;
+      height: 100%;
+      left: 0;
+    }
+  }
+
+  .job-3 {
+    grid-area: job3;
+    font-size: 1.1rem;
+
+    margin-right: 15rem;
+    .skill-container {
+      width: 80%;
+      height: 25px;
+      background-color: #ddd;
+      margin: 10px 10px 5px 20px;
+      display: inline-block;
+      position: relative;
+    }
+    .skill-container p {
+      line-height: 0px;
+      position: absolute;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .skill-container p:nth-child(2) {
+      padding-left: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .skill-container p:nth-child(3) {
+      right: 20px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .skill-graph {
+      position: absolute;
+      height: 100%;
+      left: 0;
+    }
+  }
+}
+
+#experience {
+  display: grid;
+  grid-gap: 0px;
+  overflow: auto;
+  grid-template-areas:
+    "container container container container container container container container"
+    "ano1 exp1 exp1 exp1 exp1 exp1 exp1 exp1"
+    "ano2 exp2 exp2 exp2 exp2 exp2 exp2 exp2"
+    "ano3 exp3 exp3 exp3 exp3 exp3 exp3 exp3"
+    "ano4 exp4 exp4 exp4 exp4 exp4 exp4 exp4"
+    "ano5 exp5 exp5 exp5 exp5 exp5 exp5 exp5"
+    "ano6 exp6 exp6 exp6 exp6 exp6 exp6 exp6"
+    "ano7 exp7 exp7 exp7 exp7 exp7 exp7 exp7";
+  grid-template-columns: repeat(8, 1fr);
+
+  margin-right: 15rem;
+  margin-left: 15rem;
+  .h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  .p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .lista {
+    line-height: 1.5rem;
+  }
+  .ano1 {
+    grid-area: ano1;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano2 {
+    grid-area: ano2;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano3 {
+    grid-area: ano3;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano4 {
+    grid-area: ano4;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano5 {
+    grid-area: ano5;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano6 {
+    grid-area: ano6;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .ano7 {
+    grid-area: ano7;
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+  }
+  .exp-1 {
+    grid-area: exp1;
+    padding: 1rem;
+  }
+  .exp-2 {
+    grid-area: exp2;
+    padding: 1rem;
+  }
+  .exp-3 {
+    grid-area: exp3;
+    padding: 1rem;
+  }
+  .exp-4 {
+    grid-area: exp4;
+    padding: 1rem;
+  }
+  .exp-5 {
+    grid-area: exp5;
+    padding: 1rem;
+  }
+  .exp-6 {
+    grid-area: exp6;
+    padding: 1rem;
+  }
+  .exp-7 {
+    grid-area: exp7;
+    padding: 1rem;
+  }
+}
+
+#education {
+  display: grid;
+  grid-gap: 20px;
+  overflow: auto;
+  background-color: $color-back;
+  grid-template-areas:
+    "container container container container container container container container container container container container"
+    "ano1 edu1 edu1 edu1 edu1 edu1 ano5 edu5 edu5 edu5 edu5 edu5"
+    "ano2 edu2 edu2 edu2 edu2 edu2 ano6 edu6 edu6 edu6 edu6 edu6"
+    "ano3 edu3 edu3 edu3 edu3 edu3 ano7 edu7 edu7 edu7 edu7 edu7"
+    "ano4 edu4 edu4 edu4 edu4 edu4 ano8 edu8 edu8 edu8 edu8 edu8";
+  grid-template-columns: repeat(12, 1fr);
+  padding: 1.2rem;
+
+  .job h2 {
+    font-size: 1.2rem;
+    font-style: italic;
+    padding: 0rem;
+  }
+  .job h3 {
+    font-size: 1rem;
+    margin: auto;
+  }
+  .job h3 img {
+    vertical-align: middle;
+    margin: auto;
+    border-radius: 20%;
+    border: #aa9100 1px solid;
+  }
+  .job h4 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: auto;
+  }
+  .ano1,
+  .ano2,
+  .ano3,
+  .ano4 {
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+    margin-left: 10rem;
+  }
+
+  .ano5,
+  .ano6,
+  .ano7,
+  .ano8 {
+    margin: auto;
+    text-align: center;
+    color: #aa9100;
+    font-size: 1.2rem;
+    margin-right: 10rem;
+  }
+
+  .edu-5,
+  .edu-6,
+  .edu-7,
+  .edu-8 {
+    margin-left: -10rem;
+    margin-right: 10rem;
+  }
+
+  .ano1 {
+    grid-area: ano1;
+  }
+  .ano2 {
+    grid-area: ano2;
+  }
+  .ano3 {
+    grid-area: ano3;
+  }
+  .ano4 {
+    grid-area: ano4;
+  }
+  .ano5 {
+    grid-area: ano5;
+  }
+  .ano6 {
+    grid-area: ano6;
+  }
+  .ano7 {
+    grid-area: ano7;
+  }
+  .ano8 {
+    grid-area: ano8;
+  }
+  .edu-1 {
+    grid-area: edu1;
+    padding: 1rem;
+
+    .titulo {
+      text-align: center;
+      font-size: 1.3rem;
+      font-style: normal;
+      padding: 0rem;
+    }
+  }
+  .edu-2 {
+    grid-area: edu2;
+    padding: 1rem;
+  }
+  .edu-3 {
+    grid-area: edu3;
+    padding: 1rem;
+  }
+  .edu-4 {
+    grid-area: edu4;
+    padding: 1rem;
+  }
+  .edu-5 {
+    grid-area: edu5;
+    padding: 1rem;
+    .titulo {
+      text-align: center;
+      font-size: 1.3rem;
+      font-style: normal;
+      padding: 0rem;
+    }
+  }
+  .edu-6 {
+    grid-area: edu6;
+    padding: 1rem;
+  }
+  .edu-7 {
+    grid-area: edu7;
+    padding: 1rem;
+  }
+  .edu-8 {
+    grid-area: edu8;
+    padding: 1rem;
+  }
+}
+
+#contact {
+  display: grid;
+  grid-gap: 30px;
+  overflow: auto;
+  a {
+    color: #567;
+    &:hover {
+      color: #aa9100;
+    }
+  }
+  grid-template-areas:
+    "container container "
+    "i_lin i_twi"
+    "i_ema i_git";
+  grid-template-columns: 1fr, 1fr;
+  padding: 1.2rem;
+  margin-right: 15rem;
+  margin-left: 15rem;
+
+  .i_lin {
+    grid-area: i_lin;
+    padding: 1rem;
+    color: #567;
+    margin: auto;
+  }
+  .i_twi {
+    grid-area: i_twi;
+    padding: 1rem;
+    margin: auto;
+  }
+  .i_git {
+    grid-area: i_git;
+    padding: 1rem;
+    margin: auto;
+  }
+  .i_ema {
+    grid-area: i_ema;
+    padding: 1rem;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #home {
+    height: 50vh;
+
+    .inicio {
+      margin-top: 20vh;
+      font-size: 1rem;
+    }
+  }
+
+  nav {
+    height: auto;
+    border-bottom: 0;
+    width: 100%;
+
+    ul {
+      display: none;
+      height: auto;
+      width: 100%;
+    }
+
+    li {
+      width: 100%;
+      float: left;
+      position: relative;
+    }
+
+    a {
+      text-align: left;
+      width: 100%;
+      text-indent: 25px;
+      background: $menu-bg;
+      border-bottom: 1px solid $menu-border;
+    }
+
+    a:hover {
+      background: $menu-hover;
+    }
+
+    a#openup:after {
+      content: "|||";
+      transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg); /* IE 9 */
+      -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    a#openup {
+      display: block;
+      background-color: $menu-bg;
+      width: 100%;
+      position: relative;
+    }
+  } //nav
+
+  // about me
+  #about-info {
+    grid-template-areas:
+      "container "
+      "bioimage"
+      "bio";
+    grid-template-columns: 1fr;
+  }
+
+  // skill
+  #skill {
+    grid-template-areas:
+      "container"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr;
+  }
+
+  // experiences
+  #experience {
+    grid-template-areas:
+      "container"
+      "ano1"
+      "exp1"
+      "ano2"
+      "exp2"
+      "ano3"
+      "exp3"
+      "ano4"
+      "exp4"
+      "ano5"
+      "exp5";
+    grid-template-columns: 1fr;
+    padding: 1.2rem 0rem 0rem 0rem;
+    margin: auto;
+  }
+  #education {
+    grid-template-areas:
+      "container"
+      "ano1"
+      "edu1"
+      "ano2"
+      "edu2"
+      "ano3"
+      "edu3"
+      "ano4"
+      "edu4"
+      "ano5"
+      "edu5"
+      "ano6"
+      "edu6"
+      "ano7"
+      "edu7"
+      "ano8"
+      "edu8";
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+  }
+} // media
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  zoom: 1;
+} /* For IE 6/7 (trigger hasLayout) */
